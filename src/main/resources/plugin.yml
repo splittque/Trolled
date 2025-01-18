@@ -1,0 +1,8 @@
+name: Trolled
+version: '${version}'
+main: me.splitque.trolled.Trolled
+api-version: '1.18'
+authors: [ splittque ]
+description: Troll your players!
+commands:
+  trolled: {}
