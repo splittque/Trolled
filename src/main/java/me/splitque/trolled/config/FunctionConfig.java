@@ -22,7 +22,7 @@ public class FunctionConfig extends ConfigHandler {
         addString("troll.kick.reason", "You are banned from this server");
         addString("troll.message.title", "Fake /op");
         addString("troll.message.description", "Say player now his operator");
-        addString("troll.message.message", "You have been opped!");
+        addString("troll.message.message", "§7§o[Server: Made {player} a server operator]");
         addString("troll.sounds.title", "Play sounds!");
         addString("troll.sounds.description", "Play any sounds to the player!");
         addString("sounds.title", "Sounds Menu");

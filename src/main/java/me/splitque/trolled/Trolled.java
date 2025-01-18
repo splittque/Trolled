@@ -5,6 +5,7 @@ import me.splitque.trolled.config.MessagesConfig;
 import me.splitque.trolled.funcs.sounds.SoundsManager;
 import me.splitque.trolled.funcs.troll.TrollManager;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -28,10 +29,8 @@ public class Trolled extends JavaPlugin {
     @Override
     public void onEnable() {
         log = getSLF4JLogger();
-
         funcConfig = new FunctionConfig();
         msgConfig = new MessagesConfig();
-
         trollManager = new TrollManager(funcConfig.getString("troll.title"), this);
         soundsManager = new SoundsManager(funcConfig.getString("sounds.title"), this);
 

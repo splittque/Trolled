@@ -1,9 +1,12 @@
 package me.splitque.trolled.config;
 
 import me.splitque.trolled.Trolled;
+import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.entity.Player;
 
 import java.io.*;
 import java.nio.file.Files;
@@ -69,7 +72,7 @@ public abstract class ConfigHandler {
             config.set(key, value);
         }
         Trolled.log.info("Added option " + key + ":" + getInteger(key) + " to " + path.toString() + " config!");
-    };
+    }
     public void addDouble(String key, Double value) {
         if (fileConfig != null) {
             if (fileConfig.getDouble(key) != value && fileConfig.get(key) != null) config.set(key, fileConfig.getDouble(key));
@@ -78,21 +81,26 @@ public abstract class ConfigHandler {
             config.set(key, value);
         }
         Trolled.log.info("Added option " + key + ":" + getDouble(key) + " to " + path.toString() + " config!");
-    };
+    }
     public String getString(String key) {
         Trolled.log.info("Getted option from " + path.toString() + " config!");
         return (String) config.get(key);
-    };
+    }
+    public String getString(String key, Player player) {
+        Trolled.log.info("Getted option from " + path.toString() + " config!");
+        String s = (String) config.get(key);
+        return s.replace("{player}", player.getName());
+    }
     public Boolean getBoolean(String key) {
         Trolled.log.info("Getted option from " + path.toString() + " config!");
         return (Boolean) config.get(key);
-    };
+    }
     public Integer getInteger(String key) {
         Trolled.log.info("Getted option from " + path.toString() + " config!");
         return (Integer) config.get(key);
-    };
+    }
     public Double getDouble(String key) {
         Trolled.log.info("Getted option from " + path.toString() + " config!");
         return (Double) config.get(key);
-    };
+    }
 }

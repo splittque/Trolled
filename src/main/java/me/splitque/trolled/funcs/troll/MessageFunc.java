@@ -12,6 +12,6 @@ public class MessageFunc extends AbstractFunc {
 
     @Override
     public void func(Player admin, Player trolled) {
-        trolled.sendMessage(Trolled.funcConfig.getString("troll.message.message"));
+        trolled.sendMessage(Trolled.funcConfig.getString("troll.message.message", trolled));
     }
 }

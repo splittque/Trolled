@@ -7,7 +7,7 @@ import org.bukkit.entity.Player;
 
 public class ToSounds extends AbstractFunc {
     public ToSounds() {
-        super(Material.NOTE_BLOCK, Trolled.funcConfig.getString("troll.sounds.title"), Trolled.funcConfig.getString("troll.sounds.description"), 1, 4);
+        super(Material.NOTE_BLOCK, Trolled.funcConfig.getString("troll.sounds.title"), Trolled.funcConfig.getString("troll.sounds.description"), 1, 5);
     }
 
     @Override
