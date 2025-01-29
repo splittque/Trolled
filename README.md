@@ -1,4 +1,4 @@
-Modrinth | Hangar | SpigotMC
+[Modrinth](https://modrinth.com/plugin/trolled) | [Hangar](https://hangar.papermc.io/splittque/Trolled) | [SpigotMC](https://www.spigotmc.org/resources/trolled.122255/)
 # Trolled
 Fully-configurable minecraft plugin for trolling players on your server.
 
