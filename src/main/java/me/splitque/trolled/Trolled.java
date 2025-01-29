@@ -58,6 +58,7 @@ public class Trolled extends JavaPlugin {
                         commandSender.sendMessage(msgConfig.getString("reload"));
                         onDisable();
                         onEnable();
+                        commandSender.sendMessage(msgConfig.getString("reload_complete"));
                         return true;
                     }
                     if (getServer().getPlayer(arg) == null) {
