@@ -23,7 +23,7 @@ All functions can be fully customized.
 
 
 #### How to setup custom sound
-1. Download archive custom_sound.zip.
+1. Download archive custom_sound.zip from release.
 2. Change custom.ogg to another.
 3. Apply the archive as a resourcepack on the server.
 
