@@ -13,6 +13,6 @@ public class MessagesConfig extends ConfigHandler {
         addString("no_permission", "You §4don't have permission §fto do this!");
         addString("command_executor_dont_player", "§eOnly players §fcan execute this command");
         addString("reload", "Plugin §ereloading...");
-        addString("reload_complete", "Plugin §2reloaded!");
+        addString("reload_complete", "Plugin §areloaded!");
     }
 }
