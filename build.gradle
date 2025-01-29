@@ -5,10 +5,12 @@ plugins {
 group = 'me.splitque'
 version = '0.0.1'
 
+java {
+    toolchain.languageVersion.set(JavaLanguageVersion.of(17))
+}
+
 repositories {
-    mavenCentral()
     maven { url = "https://repo.papermc.io/repository/maven-public/" }
-    maven { url = "https://oss.sonatype.org/content/groups/public/" }
 }
 
 dependencies {

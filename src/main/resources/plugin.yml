@@ -1,8 +1,12 @@
 name: Trolled
 version: '${version}'
 main: me.splitque.trolled.Trolled
-api-version: '1.18'
+api-version: '1.13'
 authors: [ splittque ]
 description: Troll your players!
+permissions:
+  trolled.permission:
+    description: 'Full access to the plugin'
+    default: not op
 commands:
   trolled: {}

@@ -5,11 +5,10 @@ Fully-configurable minecraft plugin for trolling players on your server.
 ![Alt text](.gif/forgif.gif)
 
 ### How-To-Use
-1. Download the plugin
-2. Start server with this plugin
-3. Stop or restart the server for the configuration files to appear
-4. Configure the plugin
-5. Done!
+1. Download the plugin.
+2. Start server with this plugin.
+3. Stop or restart the server for the configuration files to appear.
+4. Configure the plugin.
 
 ---
 
@@ -21,6 +20,12 @@ All functions can be fully customized.
 - Message to player. Realized in "vanilla" how fake /op.
 - Play any sound to player.
 - Teleport a player relative to his location. Realized how teleport to +100.000 Y
+
+
+#### How to setup custom sound
+1. Download archive custom_sound.zip.
+2. Change custom.ogg to another.
+3. Apply the archive as a resourcepack on the server.
 
 ---
 
