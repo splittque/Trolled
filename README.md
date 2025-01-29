@@ -11,6 +11,8 @@ Fully-configurable minecraft plugin for trolling players on your server.
 4. Configure the plugin
 5. Done!
 
+---
+
 ### Troll functions
 All functions can be fully customized.
 - Blow up the player.
