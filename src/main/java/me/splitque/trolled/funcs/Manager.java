@@ -1,8 +1,7 @@
 package me.splitque.trolled.funcs;
 
-import me.splitque.trolled.Trolled;
 import me.splitque.trolled.Utils;
-import me.splitque.trolled.menu.MenuManager;
+import me.splitque.trolled.menu.MenuHandler;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,23 +14,27 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class AbstractManager implements Listener {
-    private MenuManager menu;
-    public List<AbstractFunc> funcs;
+public abstract class Manager implements Listener {
+    private MenuHandler menu;
+    private int rows;
+    public List<Func> funcs;
 
-    public AbstractManager(String title, JavaPlugin plugin) {
+    public Manager(String title, int rows, JavaPlugin plugin) {
         funcs = new ArrayList<>();
-        menu = new MenuManager(title, 4, plugin);
+        menu = new MenuHandler(title, rows, plugin);
+        this.rows = rows;
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
-        Trolled.log.info("Created func manager");
+
+        setFuncs();
     }
 
-    public abstract void register();
-
-    public MenuManager getMenu() {
+    public MenuHandler getMenu() {
         return menu;
     }
-    public void addToList(AbstractFunc func) {
+
+    public abstract void setFuncs();
+
+    public void registerFunc(Func func) {
         funcs.add(func);
     }
 
@@ -40,7 +43,7 @@ public abstract class AbstractManager implements Listener {
         if (e.getView().getTitle().equals(menu.getTitle())) {
             e.setCancelled(true);
 
-            ItemStack head = e.getView().getItem(Utils.getIndex(4, 5));
+            ItemStack head = e.getView().getItem(Utils.getIndex(rows, 5));
             SkullMeta meta = (SkullMeta) head.getItemMeta();
 
             if (meta.hasOwner()) {
@@ -49,8 +52,8 @@ public abstract class AbstractManager implements Listener {
 
                 if (e.getCurrentItem() == null || e.getCurrentItem().getType() == Material.AIR) return;
 
-                for (AbstractFunc func : funcs) {
-                    if (e.getCurrentItem().getType() == func.getItem()) func.func(admin, trolled);
+                for (Func func : funcs) {
+                    if (e.getCurrentItem().toString().equals(func.getItem().toString())) func.func(admin, trolled);
                 }
             }
         }

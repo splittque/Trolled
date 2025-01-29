@@ -18,21 +18,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class MenuManager implements Listener {
+public class MenuHandler implements Listener {
     private String title;
     private Map<Integer, ItemStack> items;
     private int rows;
 
-    public MenuManager(String title, int rows, JavaPlugin plugin) {
-        items = new HashMap<>();
-        this.title = title;
-        this.rows = rows;
-        plugin.getServer().getPluginManager().registerEvents(this, plugin);
-        Trolled.log.info("Created new Menu: " + title);
-    }
-
-    public void registerToMenu(Material item, String name, String description, int row, int column) {
-        ItemStack itemStack = new ItemStack(item, 1);
+    public static ItemStack getItemStack(Material material, String name, String description) {
+        ItemStack itemStack = new ItemStack(material, 1);
         ItemMeta itemMeta = itemStack.getItemMeta();
 
         if (description != null) {
@@ -44,8 +36,22 @@ public class MenuManager implements Listener {
         itemMeta.setDisplayName(name);
         itemStack.setItemMeta(itemMeta);
 
+        return itemStack;
+    }
+
+    public MenuHandler(String title, int rows, JavaPlugin plugin) {
+        items = new HashMap<>();
+        this.title = title;
+        this.rows = rows;
+        plugin.getServer().getPluginManager().registerEvents(this, plugin);
+    }
+
+    public void registerToMenu(Material material, String name, String description, int row, int column) {
+        ItemStack itemStack = getItemStack(material, name, description);
         items.put(Utils.getIndex(row, column), itemStack);
-        Trolled.log.info("Item " + itemStack.getType().name() + " registered to Menu: " + name);
+    }
+    public void registerToMenu(ItemStack itemStack, int row, int column) {
+        items.put(Utils.getIndex(row, column), itemStack);
     }
 
     public Inventory getInventory(String playerName) {

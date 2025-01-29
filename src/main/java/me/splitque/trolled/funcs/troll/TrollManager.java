@@ -1,25 +1,20 @@
 package me.splitque.trolled.funcs.troll;
 
-import me.splitque.trolled.funcs.AbstractManager;
+import me.splitque.trolled.funcs.Manager;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class TrollManager extends AbstractManager {
+public class TrollManager extends Manager {
     public TrollManager(String title, JavaPlugin plugin) {
-        super(title, plugin);
-        register();
+        super(title, 4, plugin);
     }
 
     @Override
-    public void register() {
-        BlowFunc blowFunc = new BlowFunc();
-        blowFunc.register(this);
-        InventoryFunc inventoryFunc = new InventoryFunc();
-        inventoryFunc.register(this);
-        KickFunc kickFunc = new KickFunc();
-        kickFunc.register(this);
-        MessageFunc messageFunc = new MessageFunc();
-        messageFunc.register(this);
-        ToSounds toSounds = new ToSounds();
-        toSounds.register(this);
+    public void setFuncs() {
+        registerFunc(new BlowFunc(this));
+        registerFunc(new InventoryFunc(this));
+        registerFunc(new KickFunc(this));
+        registerFunc(new MessageFunc(this));
+        registerFunc(new TeleportFunc(this));
+        registerFunc(new ToSounds(this));
     }
 }

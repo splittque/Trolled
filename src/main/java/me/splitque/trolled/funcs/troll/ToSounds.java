@@ -1,13 +1,13 @@
 package me.splitque.trolled.funcs.troll;
 
 import me.splitque.trolled.Trolled;
-import me.splitque.trolled.funcs.AbstractFunc;
+import me.splitque.trolled.funcs.Func;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 
-public class ToSounds extends AbstractFunc {
-    public ToSounds() {
-        super(Material.NOTE_BLOCK, Trolled.funcConfig.getString("troll.sounds.title"), Trolled.funcConfig.getString("troll.sounds.description"), 1, 5);
+public class ToSounds extends Func {
+    public ToSounds(TrollManager manager) {
+        super(manager, Material.NOTE_BLOCK, Trolled.funcConfig.getString("troll.sounds.title"), Trolled.funcConfig.getString("troll.sounds.description"), 1, 5);
     }
 
     @Override

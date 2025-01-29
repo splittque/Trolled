@@ -1,14 +1,14 @@
 package me.splitque.trolled.funcs.sounds;
 
 import me.splitque.trolled.Trolled;
-import me.splitque.trolled.funcs.AbstractFunc;
+import me.splitque.trolled.funcs.Func;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
-public class CreeperFunc extends AbstractFunc {
-    public CreeperFunc() {
-        super(Material.CREEPER_HEAD, Trolled.funcConfig.getString("sounds.creeper.title"), Trolled.funcConfig.getString("sounds.creeper.description"), 1, 1);
+public class CreeperFunc extends Func {
+    public CreeperFunc(SoundsManager manager) {
+        super(manager, Material.CREEPER_HEAD, Trolled.funcConfig.getString("sounds.creeper.title"), Trolled.funcConfig.getString("sounds.creeper.description"), 1, 1);
     }
 
     @Override
