@@ -2,7 +2,7 @@
 # Trolled
 Fully-configurable minecraft plugin for trolling players on your server.
 
-![Alt text](.gif/forgif.gif)
+![](.gif/forgif.gif)
 
 ### How-To-Use
 1. Download the plugin.

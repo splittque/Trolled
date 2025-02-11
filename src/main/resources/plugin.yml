@@ -7,6 +7,6 @@ description: Troll your players!
 permissions:
   trolled.permission:
     description: 'Full access to the plugin'
-    default: not op
+    default: op
 commands:
   trolled: {}
